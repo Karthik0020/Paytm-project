@@ -1,0 +1,9 @@
+{
+    "extends": "./tsconfig.json",
+    "include": [
+      "apps/user-app/**/*.ts",
+      "apps/user-app/**/*.tsx",
+      "apps/user-app/tailwind.config.js"
+    ]
+  }
+  
