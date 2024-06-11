@@ -1,10 +1,15 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@repo/db/client";
+import { authOtions } from "../../lib/auth";
+import { getServerSession } from "next-auth";
 
-const client = new PrismaClient()
 
-export const POST = async () =>{
-    
+export const GET = async () =>{
+    const session = await getServerSession(authOtions)
+    if(session.user) {
+        return NextResponse.json({
+            user: session.user
+        })
+    }
     return NextResponse.json({
         message: "done"
     })
