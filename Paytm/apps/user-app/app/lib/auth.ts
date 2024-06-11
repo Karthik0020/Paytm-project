@@ -47,7 +47,7 @@ export const authOtions = {
             }
         })
     ],
-    secreat : process.env.JWT_SECRET || "abc" ,
+    secret : process.env.JWT_SECRET,
     callbacks:{
         async session({token , session} : any){
             session.user.id = token.sub
